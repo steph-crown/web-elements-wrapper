@@ -1,0 +1,18 @@
+input {
+  font-size: 0.875rem;
+  font-weight: medium;
+  border-radius: 0.25rem;
+  padding: 10px 16px;
+  transition: all;
+  background: transparent;
+  color: #333;
+  border: 1px solid #ccc;
+  outline: none;
+  display: flex;
+  gap: 0.3rem;
+  transition: all 0.3s;
+}
+
+input:focus {
+  border-color: #333;
+}
