@@ -5,15 +5,25 @@
   "author": "Steph Crown <emmanuelstephen024@gmail.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/web-elements-react.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/types/index.d.ts",
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
-    "test": "node ./__tests__/web-elements-react.test.js"
+    "test": "node ./__tests__/web-elements-react.test.js",
+    "build": "npm run tsc",
+    "tsc": "tsc -p . --outDir ./dist"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@stephcrown06/web-elements-core": "*"
   }
 }
