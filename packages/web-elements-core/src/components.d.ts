@@ -20,6 +20,18 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface WebButton {
+        "disabled": boolean;
+        "type": 'button' | 'submit' | 'reset';
+    }
+    interface WebInput {
+        "disabled": boolean;
+        "name": string;
+        "placeholder": string;
+        "required": boolean;
+        "type": 'text' | 'number' | 'email' | 'password';
+        "value": string | number;
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +40,22 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLWebButtonElement extends Components.WebButton, HTMLStencilElement {
+    }
+    var HTMLWebButtonElement: {
+        prototype: HTMLWebButtonElement;
+        new (): HTMLWebButtonElement;
+    };
+    interface HTMLWebInputElement extends Components.WebInput, HTMLStencilElement {
+    }
+    var HTMLWebInputElement: {
+        prototype: HTMLWebInputElement;
+        new (): HTMLWebInputElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "web-button": HTMLWebButtonElement;
+        "web-input": HTMLWebInputElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +73,22 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface WebButton {
+        "disabled"?: boolean;
+        "type"?: 'button' | 'submit' | 'reset';
+    }
+    interface WebInput {
+        "disabled"?: boolean;
+        "name"?: string;
+        "placeholder"?: string;
+        "required"?: boolean;
+        "type"?: 'text' | 'number' | 'email' | 'password';
+        "value"?: string | number;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "web-button": WebButton;
+        "web-input": WebInput;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +96,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "web-button": LocalJSX.WebButton & JSXBase.HTMLAttributes<HTMLWebButtonElement>;
+            "web-input": LocalJSX.WebInput & JSXBase.HTMLAttributes<HTMLWebInputElement>;
         }
     }
 }
