@@ -1,13 +1,12 @@
 {
-  "name": "web-elements-vue",
+  "name": "@stephcrown06/web-elements-vue",
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "Steph Crown <emmanuelstephen024@gmail.com>",
   "homepage": "https://github.com/steph-crown/web-elements-wrapper#readme",
   "license": "ISC",
   "directories": {
-    "lib": "lib",
-    "test": "__tests__"
+    "lib": "lib"
   },
   "repository": {
     "type": "git",
